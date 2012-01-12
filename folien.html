@@ -104,6 +104,58 @@
 	</ul>
 </section>
 
+<section class="slide" id="arch-vna-teile">
+	<h2>Von-Neumann-Architektur: Bestandteile</h2>
+	<ul>
+		<li>Central Processing Unit (CPU)<ul>
+			<li>Rechenwerk</li>
+			<li>Steuerwerk</li>
+		</ul></li>
+		<li>Eingabe-/Ausgabewerk (Southbridge)</li>
+		<li>Speicherwerk (Northbridge)</li>
+		<li>Verbindung dazwischen: Bussystem</li>
+	</ul>
+</section>
+
+<section class="slide" id="arch-vna-rechenwerk">
+	<h2>VNA: Rechenwerk</h2>
+	<ul>
+		<li>Register und arithmetisch-logische Einheit</li>
+		<li>arithmetische Operationen: Addition, Subtraktion, Multiplikation</li>
+		<li>logische Operationen: Negation (NOT), Konjunktion (AND), Disjunktion (OR), Kontravalenz (XOR)</li>
+		<li>Register: speichern Operanden, Ergebnisse und Statusinformationen (Statusregister)</li>
+		<li>Rechenwerk liest Operanden aus Registern und speichert Ergebnisse in Register</li>
+	</ul>
+</section>
+
+<section class="slide" id="arch-vna-steuerwerk">
+	<h2>VNA: Steuerwerk</h2>
+	<ul>
+		<li>liest und dekodiert Programmbefehle</li>
+		<li>stellt dem Rechenwerk die Operatoren in den Registern bereit</li>
+		<li>verändert den Befehlszähler:<ul>
+			<li>entweder Erhöhung um 1</li>
+			<li>oder beliebige Änderung (Sprungbefehl bzw. bedingter Sprung)</li>
+		</ul></li>
+	</ul>
+</section>
+
+<section class="slide" id="arch-vna-eawerk">
+	<h2>VNA: Ein-/Ausgabewerk</h2>
+	<ul>
+		<li>stellt Verbindung zwischen Von-Neumann-Teilen des Systems und der Peripherie her</li>
+		<li>kommuniziert über diverse Bussysteme (PCI, SCSI, SATA) mit Komponenten innerhalb (Grafikkarte, Soundkarte, Massenspeicher) und außerhalb (USB, PCI, eSATA) des Gehäuses</li>
+	</ul>
+</section>
+
+<section class="slide" id="arch-vna-speicherwerk">
+	<h2>VNA: Speicherwerk</h2>
+	<ul>
+		<li>stellt Verbindung zum Arbeitsspeicher (RAM) und zum ROM (BIOS) her</li>
+		<li>liest und schreibt Befehle und Daten aus dem und in den Arbeitsspeicher</li>
+	</ul>
+</section>
+
 
 
 <script src="deck.js/jquery-1.7.min.js"></script>
