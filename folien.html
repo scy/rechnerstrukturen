@@ -166,6 +166,102 @@
 	</ul>
 </section>
 
+<section class="slide" id="daten-hex">
+	<h2>Hexadezimalsystem</h2>
+	<ul>
+		<li>16 Ziffern (0–9 und a–f)</li>
+		<li>mit zwei Ziffern 16×16=256 Kombinationen darstellbar, also 1 Byte</li>
+		<li>am häufigsten benutzte, „menschenkompatibelste“ Darstellung (z.B. Hexeditor)</li>
+		<li>Schreibweisen: Präfix „0x“ oder Suffix „h“ (0xd8, a5c6ffh)</li>
+	</ul>
+</section>
+
+<section class="slide" id="daten-ascii">
+	<h2>ASCII</h2>
+	<ul>
+		<li>American Standard Code for Information Interchange</li>
+		<li>definiert Zuordnung von Zahlen zu Zeichen</li>
+		<li>benutzt 7 Bit, kennt daher 128 Zeichen</li>
+		<li>achtes Bit oft Prüfbit bzw. Paritätsbit</li>
+		<li>32 Steuerzeichen + 95 druckbare Zeichen + 1 Steuerzeichen)</li>
+		<li>viele Zeichen fehlen (Umlaute, nicht-lateinische Alphabete)</li>
+		<li>viele stehen für mehrere Zeichen („-“ für Minus und Bindestrich, »"« für Anführungszeichen, Sekunde und Zoll)</li>
+	</ul>
+</section>
+
+<section class="slide" id="daten-latin1">
+	<h2>ISO 8859-1 („Latin-1“)</h2>
+	<ul>
+		<li>benutzt das 8. Bit, um 128 weitere Zeichen darzustellen</li>
+		<li>32 Steuerzeichen + 96 druckbare</li>
+		<li>Umlaute, kl. Eszett, Cent, Pfund, Yen, Copyright, Paragraph, Guillemets etc., geschütztes Leerzeichen (non-breaking space, NBSP) und bedingter Trennstrich (soft hyphen, SHY)</li>
+		<li>in Konkurrenz mit vielen anderen Zeichensätzen (Windows-1252, KOI8-R, MacRoman, …)</li>
+		<li>zum Interpretieren einer Datei muss der Zeichensatz bekannt sein</li>
+	</ul>
+</section>
+
+<section class="slide" id="daten-mojibake">
+	<h2>Mojibake (Zeichensalat)</h2>
+	<ul>
+		<li>jap. „verformte Buchstaben“</li>
+		<li>Satz in ISO 8859-5 (Kyrillisch): Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства.</li>
+		<li>(Übersetzung: Umfangreiche Elektrifizierung der südlichen Provinzen wird einen starken Impuls zum Aufstieg der Landwirtschaft liefern.)</li>
+		<li>fälschlich interpretiert als ISO 8859-1 (Latin-1): ÈØàÞÚÐï íÛÕÚâàØäØÚÐæØï îÖÝëå ÓãÑÕàÝØÙ ÔÐáâ ÜÞéÝëÙ âÞÛçÞÚ ßÞÔêñÜã áÕÛìáÚÞÓÞ åÞ×ïÙáâÒÐ.</li>
+	</ul>
+</section>
+
+<section class="slide" id="daten-latin9">
+	<h2>ISO 8859-15 („Latin-9“)</h2>
+	<ul>
+		<li>fast identisch mit Latin-1</li>
+		<li>8 Zeichen geändert, volle Unterstützung für Französisch, Finnisch und Eurozeichen</li>
+	</ul>
+</section>
+
+<section class="slide" id="daten-unicode">
+	<h2>Unicode</h2>
+	<ul>
+		<li>Ziel: alle Zeichen der Welt darstellen zu können</li>
+		<li>beinhaltet 17 „Planes“ (Ebenen) mit je bis zu 65.536 Zeichen</li>
+		<li>6 Planes bereits definiert, andere reserviert</li>
+		<li>1.114.112 Zeichen von U+0000 bis U+10FFFF</li>
+		<li>Standard wird seit 1991 ständig weiterentwickelt</li>
+		<li>Vorteil: Zeichen sind absolut eindeutig</li>
+		<li>Nachteil: passt nicht mehr in 8 Bit, nicht mal in 16 Bit</li>
+		<li><a href="http://shapecatcher.com/">Shapecatcher</a>, <a href="http://www.decodeunicode.org/">decodeunicode</a></li>
+	</ul>
+</section>
+
+<section class="slide" id="daten-utf8">
+	<h2>UTF-8</h2>
+	<ul>
+		<li>„8-bit UCS (Universal Character Set) Transformation Format“</li>
+		<li>variable length encoding: ein Zeichen wird in 1–4 Bytes dargestellt, abhängig vom Zeichen</li>
+		<li>ASCII wird identisch kodiert (1 Byte)</li>
+		<li>Multi-Byte-Sequenzen haben ein Startbyte (beginnt mit 11) und 1–3 Folgebytes (beginnen mit 10)</li>
+		<li>charakteristischer Zeichensalat beim Interpretieren von UTF-8 als Latin-1: Falsches Ãœben von Xylophonmusik quÃ¤lt jeden grÃ¶ÃŸeren Zwerg.</li>
+	</ul>
+</section>
+
+<section class="slide" id="daten-utf16">
+	<h2>UTF-16</h2>
+	<ul>
+		<li>ursprüngliche Idee: feste Länge für alle 65.536 Unicode-Zeichen</li>
+		<li>seit Unicode mehr als eine Plane hat, werden Zeichen als 2 Byte (Plane 0, BMP) oder 4 Byte (alle anderen) dargestellt</li>
+		<li>seltener eingesetzt als UTF-8, aber unter Windows (intern) verbreitet</li>
+	</ul>
+</section>
+
+<section class="slide" id="daten-utf32">
+	<h2>UTF-32</h2>
+	<ul>
+		<li>4 Byte pro Zeichen</li>
+		<li>daher feste Länge für jedes Unicode-Zeichen</li>
+		<li>Vorteil: für Software einfach zu lesen</li>
+		<li>Nachteil: Platzbedarf</li>
+	</ul>
+</section>
+
 
 
 <section class="slide" id="blank">
