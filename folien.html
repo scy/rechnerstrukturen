@@ -398,6 +398,58 @@
 	</ul>
 </section>
 
+<section class="slide" id="interface-usb-el">
+	<h2>Universal Serial Bus</h2>
+	<ul>
+		<li>serielle, symmetrische Übertragung</li>
+		<li>1.0 (1995), 1.1 (1998): 1,5 Mbit (Low Speed), 12 Mbit (Full Speed), 5 V, 100/500 mA</li>
+		<li>2.0 (2000): 480 Mbit (Hi-Speed)</li>
+		<li>3.0 (2008): 4000 Mbit (SuperSpeed), 900 mA, neue Kabel/Stecker</li>
+		<li>Stecker je nach „Ende“ unterschiedlich: am Host A, am Gerät B (bzw. Micro-B oder Mini-B)</li>
+		<li>Kabel max. 5 m (Low Speed) bzw. 3 m (Full/Hi-Speed)</li>
+		<li>Hubs: mehr Ports (max. 127 Geräte); bus-powered oder self-powered</li>
+		<li>hotplugfähig</li>
+	</ul>
+</section>
+
+<section class="slide" id="interface-usb-log">
+	<h2>Universal Serial Bus</h2>
+	<ul>
+		<li>generische Treiber für Geräteklassen bereits im Standard, spezifische Treiber daher meist überflüssig</li>
+		<li>z.B. Massenspeicher, Audio, HID (Human Interface Device, Tastatur/Maus etc.)</li>
+		<li>der Computer (Host) ist verantwortlich für Steuerung, Adresszuteilung etc.</li>
+		<li>USB On-The-Go: Geräte implementieren Host-Funktionalitäten; z.B. damit Handy Fotos von Digitalkamera laden kann</li>
+	</ul>
+</section>
+
+<section class="slide" id="interface-firewire">
+	<h2>IEEE 1394 („FireWire“)</h2>
+	<ul>
+		<li>ähnlich USB, früher begonnen (80er), etwa gleichzeitig fertiggestellt</li>
+		<li>1394a, 400 (1995): 100/200/400 Mbit halbduplex, 8–30 V, 1500 mA</li>
+		<li>sechspolige Stecker: 4 Datenleitungen, 2 Spannungsversorgung; vierpolige (kleine) Stecker ohne Spannungsversorgung</li>
+		<li>1394b, 800 (2002): 800 Mbit vollduplex, neue Kabel/Stecker (neunpolig, „beta“)</li>
+		<li>3200 (2008): 3200 Mbit, Geräte lassen auf sich warten</li>
+		<li>Kabel max. 4,5 m (400), mit 1394b auch länger (&gt; 100 m) möglich (bei reduzierter Geschwindigkeit)</li>
+		<li>Geräteketten möglich („daisy chaining“)</li>
+		<li>kein Host nötig</li>
+	</ul>
+</section>
+
+<section class="slide" id="interface-thunderbolt">
+	<h2>Thunderbolt</h2>
+	<ul>
+		<li>erste Geräte 2011</li>
+		<li>kombiniert DisplayPort und PCI Express</li>
+		<li>20-poliger Mini-DisplayPort-Stecker, 10 Watt</li>
+		<li>ursprünglich als optisches Interface gedacht (auch noch in Planung)</li>
+		<li>4 Kanäle mit je 10 Gbit pro Sekunde und Richtung, ergo 20 Gbit vollduplex</li>
+		<li>Daisychaining von 7 Geräten, davon max. 2 (HD-)Displays</li>
+		<li>abwärtskompatibel zu DisplayPort, dafür muss DisplayPort-Gerät aber am Ende der Kette liegen</li>
+		<li>Storage-Geräte, z.B. Festplatten (300 MB/s), bereits erhältlich</li>
+	</ul>
+</section>
+
 
 
 <section class="slide" id="blank">
