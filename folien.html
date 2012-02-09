@@ -450,6 +450,71 @@
 	</ul>
 </section>
 
+<section class="slide" id="interface-pata">
+	<h2>PATA/IDE (ATA/ATAPI)</h2>
+	<ul>
+		<li>Advanced Technology Attachment: Protokoll für Kommunikation zw. Computer und Massenspeichern</li>
+		<li>Integrated Device Electronics: Stecker-/Kabelstandard für gehäuseinterne Verkabelung</li>
+		<li>40-poliges Flachbandkabel, parallele 16-Bit-Übertragung, zwei Geräte (Master und Slave) an einem Kabel</li>
+		<li>1989 ATA-1 (8,3 MB/s), 1994 ATA-2 (16,6 MB/s), 1996 ATA-3 (S.M.A.R.T.)</li>
+		<li>1997 ATA/ATAPI-4 (Unterstützung für CD-ROM und Brenner, Erweiterung um SCSI-Kommandos via „Packet Interface“)</li>
+		<li>seit ATA/ATAPI-7 (2001) 133 MB/s, außerdem kam SATA hinzu (selbe Kommandos, aber serielle Übertragung), bisherige parallele Variante wird PATA genannt</li>
+		<li>Strom über 4-poligen Molexstecker</li>
+	</ul>
+</section>
+
+<section class="slide" id="interface-sata">
+	<h2>SATA</h2>
+	<ul>
+		<li>Serial ATA: serielle Übertragung, Punkt-zu-Punkt (nur noch ein Gerät pro Kabel)</li>
+		<li>7-poliges Flachkabel, max. 1 m</li>
+		<li>Strom über 15-poligen Stecker</li>
+		<li>2002 SATA 1.5 Gbit/s („SATA I“): 150 MB/s</li>
+		<li>2005 SATA 3.0 Gbit/s („SATA II“): 300 MB/s, außerdem kommt „externes SATA“ (eSATA, außerhalb des PC-Gehäuses) hinzu</li>
+		<li>2009 SATA 6.0 Gbit/s („SATA III“): 600 MB/s, vorrangig für SSDs (Festplatten sind zu langsam)</li>
+		<li>eSATA: für externen Einsatz optimierte Kabel (max. 2 m) und Stecker</li>
+		<li>leider noch kein einheitlicher Standard für eSATA-Strom</li>
+	</ul>
+</section>
+
+<section class="slide" id="interface-pci">
+	<h2>PCI</h2>
+	<ul>
+		<li>Peripheral Component Interconnect</li>
+		<li>Busstandard für Erweiterungskarten auf dem Mainboard</li>
+		<li>ca. 1993, löste ISA ab</li>
+		<li>32-Bit-Parallelbus, später 64 Bit</li>
+		<li>133 MB/s bis 533 MB/s, je nach Version</li>
+		<li>25 W pro Steckplatz, hotplugfähig</li>
+		<li>für Grafikkarten ergänzt durch AGP, später abgelöst durch PCIe</li>
+	</ul>
+</section>
+
+<section class="slide" id="interface-agp">
+	<h2>AGP</h2>
+	<ul>
+		<li>Accelerated Graphics Port</li>
+		<li>direkte parallele Verbindung zum Chipsatz statt Busanbindung</li>
+		<li>ca. 1998, Ergänzung zu PCI</li>
+		<li>höhere Datenrate (266 bzw. 533 MB/s) und Möglichkeit, System-RAM mitzunutzen (damit Grafikkarte günstiger wird)</li>
+		<li>mehrere Ausbaustufen, ab 2002 dann AGP 8x (2133 MB/s)</li>
+		<li>25 W am Steckplatz, viele Grafikkarten benutzen zusätzliche Stromversorgung z.B. über Laufwerks-Molexstecker</li>
+	</ul>
+</section>
+
+<section class="slide" id="interface-pcie">
+	<h2>PCI Express (PCIe)</h2>
+	<ul>
+		<li>löst ab ca. 2004 PCI und AGP ab</li>
+		<li>je nach Version 250, 500 oder 985 MB pro Sekunde und Lane („Spur“)</li>
+		<li>serielle Übertragung</li>
+		<li>Geräte können mit einer oder mehreren (bis zu 16) Lanes angebunden sein, Slots unterschiedlich lang</li>
+		<li>16 Lanes PCIe 3.0: 16 × 985 MB/s = 31,5 GB/s</li>
+		<li>25 W pro Steckplatz, an PEG-Slots (PCI Express for Graphics, x16) 75 W</li>
+		<li>zusätzliche Stromstecker definiert, die weitere 75 oder 150 W liefern</li>
+	</ul>
+</section>
+
 
 
 <section class="slide" id="blank">
