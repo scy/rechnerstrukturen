@@ -517,6 +517,60 @@
 
 
 
+<section class="slide" id="ethernet-history">
+	<h2>Ethernet (IEEE 802.3)</h2>
+	<ul>
+		<li>Standard zur LAN-Kommunikation zwischen Computern</li>
+		<li>definiert elektrische/physikalische Regeln (Leitungsarten und Kodierung der Bits) und Struktur der Datenpakete und Netze</li>
+		<li>erste Version 1980</li>
+		<li>ursprünglich über Koaxialkabel (10BASE2 („cheapernet“, „thin Ethernet“) und 10BASE5 („thick Ethernet“)) auf gemeinsamen Leitungen, 10 MBit/s</li>
+		<li>benutzt CSMA/CD („carrier sense multiple access with collision detection“) zur Kollisionsvermeidung</li>
+		<li>Busleitungen sind aber aufwendig und fehleranfällig</li>
+		<li>daher Baum-/Sterntopologie über Twisted Pair (10BASE-T)</li>
+	</ul>
+</section>
+
+<section class="slide" id="ethernet-switched">
+	<h2>Switched Ethernet</h2>
+	<ul>
+		<li>trotz Baumtopologie lief noch immer jedes Paket an jeden Computer</li>
+		<li>deshalb Verteilergeräte (Hubs) um Funktionen erweitert, mit denen sie Datenpakete nur Richtung Empfänger weiterleiten und nicht an alle Angeschlossenen: Switches</li>
+		<li>ca. 1990</li>
+		<li>damit jetzt auch Vollduplex (zw. Switch und Gerät) möglich</li>
+		<li>außerdem Geschwindigkeitsverbesserungen: Fast Ethernet (100BASE-TX, 100 MBit/s, 1995), Gigabit Ethernet (1000BASE-T, 1999)</li>
+		<li>aktuell im professionellen Bereich bis zu 100 GBit/s, u.a. über Glasfaser</li>
+		<li>außerdem verfügbar: Power over Ethernet (PoE), bis zu 25 W Stromversorgung</li>
+	</ul>
+</section>
+
+<section class="slide" id="ethernet-frames">
+	<h2>Ethernet-Frames</h2>
+	<ul>
+		<li>Frame: ein Ethernet-Paket, wie es über die Leitung geht. Enthält unter anderem:</li>
+		<li>sieben Oktette Präambel (10101010)</li>
+		<li>ein Oktett Start of Frame (10101011)</li>
+		<li>6 Oktette Ziel-MAC</li>
+		<li>6 Oktette Quell-MAC</li>
+		<li>42–1500 Oktette Nutzlast</li>
+		<li>4 Oktette Prüfsumme (CRC)</li>
+		<li>danach 12 Oktette Pause (interframe gap)</li>
+	</ul>
+</section>
+
+<section class="slide" id="ethernet-mac">
+	<h2>MAC-Adresse</h2>
+	<ul>
+		<li>Media Access Control address</li>
+		<li>„einmalige“ 48-Bit-Adresse einer Netzwerkkarte, z.B. 10:9a:dd:a6:d4:6e</li>
+		<li>bei handelsüblichen Netzwerkkarten tatsächlich weltweit einmalig (Nummernbereiche pro Hersteller)</li>
+		<li>„locally administered addresses“ auch möglich</li>
+		<li>bestimmt, an welche Netzwerkkarte im Segment das Paket gehen soll</li>
+		<li>hat nichts mit globalem Routing von Paketen zu tun</li>
+	</ul>
+</section>
+
+
+
 <section class="slide" id="blank">
 </section>
 
