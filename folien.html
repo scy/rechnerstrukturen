@@ -624,6 +624,31 @@
 
 
 
+<section class="slide" id="bluetooth-history">
+	<h2>Bluetooth (IEE 802.15.1)</h2>
+	<ul>
+		<li>Personal Area Network (PAN) auf 2,4-GHz-Funkbasis</li>
+		<li>2001 als Ersatz für Kabelverbindungen (z.B. RS-232) und Infrarotverbindungen (IrDA) entwickelt</li>
+		<li>benannt nach dänischem Wikingerkönig Harald Blauzahn</li>
+		<li>Klasse 1: 100 mW Sendeleistung, 100 m Reichweite; Klasse 2: 2,5 mW, 10 m; Klasse 3: 1 mW, 5 m</li>
+		<li>ursprünglich 732 kbit/s, seit Bluetooth 2.0 + EDR (Enhanced Data Rate) 3 Mbit/s, aktuell Bluetooth 4.0 mit Bluetooth Low Energy und Bluetooth High Speed (basierend auf Wi-Fi)</li>
+		<li>1 Gerät agiert als Master, max. 7 Slaves pro Piconet</li>
+		<li>zwei Kommunikationskanäle: synchrone Verbindung (SCO) für Sprache (Echtzeit, hat Priorität), asynchron und paketorientiert (ACL), benutzt „restliche“ Bandbreite</li>
+	</ul>
+</section>
+
+<section class="slide" id="bluetooth-details">
+	<h2>Bluetooth-Profile und Pairing</h2>
+	<ul>
+		<li>Geräte kommunizieren über standardisierte <a href="http://en.wikipedia.org/wiki/Bluetooth_profile">Profile</a>, ähnlich wie die Geräteklassen bei USB</li>
+		<li>Beispiele: HID (Human Interface Device; Tastaturen, Mäuse, Wiimotes etc.), A2DP (Advanced Audio Distribution Profile; Stereo-Audio, z.B. für Kopfhörer), HFP (Hands-Free Profile; Freisprecheinrichtungen/Headsets), SPP (Serial Port Profile; „RS-232 über Bluetooth“)</li>
+		<li>Pairing: zwei Geräte werden miteinander „bekannt gemacht“ (handeln gemeinsamen Schlüssel für Kommunikation aus)</li>
+		<li>versch. <a href="http://en.wikipedia.org/wiki/Bluetooth#Pairing_mechanisms">Pairing-Methoden</a>: Just Works (ohne PIN-Eingabe und -Vergleich, dafür kein Man-in-the-Middle-Schutz), PIN-Vergleich (autom. generiert und auf beiden Geräten angezeigt), PIN-Eingabe, Out-of-Band (über anderen Kommunikationsweg, z.B. NFC), Legacy (alte Methode: PIN-Eingabe oder feste PIN)</li>
+	</ul>
+</section>
+
+
+
 <section class="slide" id="blank">
 </section>
 
