@@ -159,10 +159,29 @@
 
 
 
-<section class="slide" id="daten-baustelle">
-	<h2>Daten und ihre Verarbeitung</h2>
+<section class="slide" id="daten-binary">
+	<h2>Binärsystem</h2>
 	<ul>
-		<li>(Folien und Links zu Termin #3 folgen.)</li>
+		<li>statt dem üblichen Dezimalsystem mit 10 Ziffern (0–9) werden nur zwei (0 und 1) verwendet</li>
+		<li>lässt sich gut in technischen Systemen abbilden: Strom fließt oder nicht, Loch oder nicht (Lochkarte), in eine Richtung magnetisiert oder die andere (Festplatte), Vertiefung oder nicht (CD) etc.</li>
+		<li>Addition wie im Dezimalsystem: 0 + 0 = 0, 0 + 1 = 1, 1 + 1 = 10</li>
+		<li>Addition zweier Ziffern entspricht (wenn man den Übertrag außer Acht lässt) einem XOR (Kontravalenz)</li>
+		<li>Übertrag der Addition zweier Ziffern entspricht einem AND (Konjunktion)</li>
+	</ul>
+</section>
+
+<section class="slide" id="daten-complement">
+	<h2>Zweierkomplement</h2>
+	<ul>
+		<li>für Subtraktion könnte man eigene Schaltungen bauen, oder aber einfach negative Zahlen addieren: 5 - 3 = 5 + (-3)</li>
+		<li>negative ganze Zahlen werden im Zweierkomplement dargestellt</li>
+		<li>Beispiel: Umrechnung von 82 zu -82<ul>
+			<li>82 in Binärdarstellung: 01010010</li>
+			<li>invertieren: 10101101</li>
+			<li>1 addieren: 10101110</li>
+		</ul></li>
+		<li>103 – 82 entspricht 103 + (-82): 01100111 + 10101110 = (1)00010101 = 21</li>
+		<li>(der Überlauf wird in unserem Fall ignoriert)</li>
 	</ul>
 </section>
 
