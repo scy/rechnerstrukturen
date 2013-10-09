@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="scylec/scylec-2013.css" />
+	<script src="scylec/jquery-1.10.2.min.js"></script>
+	<script src="scylec/scylec.js"></script>
+	<script>
+		scylec.onReady(function () {
+			scylec.doPresentation();
+		});
+	</script>
+</head>
+
+<body>
+
+<h1>Rechnerstrukturen</h1>
+
+<h2>Organisatorisches</h2>
+
+<article class="slide"><h3>Über den Dozenten</h3>
+<ul>
+	<li>Tim Weber <code class="email"><a href="mailto:dhbw@timweber.name">dhbw@timweber.name</a></code></li>
+	<li>angestellt als Webentwickler bei der <a href="http://www.cocomore.de/">Cocomore AG</a></li>
+	<li>studierte Software- und Internettechnologie an der Uni Mannheim</li>
+	<li>arbeitete als Systemadministrator am Uni-Rechenzentrum</li>
+	<li>betriebssystem- und hardwarenahe Programmiererfahrung</li>
+	<li>Nerd und Netzaktivist</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Termine</h3>
+<ul>
+	<li>7 Termine à 3:45 h</li>
+	<li>jeweils Montag 10:30–15:00, vom 07.10. bis 18.11.</li>
+	<li>Vorschlag: 10:30–12:30 (2:00 h), 45 min Pause, 13:15–15:00 (1:45 h)</li>
+	<li>Klausurzeit 16.–23.12.</li>
+	<li>Klausurblock „Multimedia-Grundlagen I“, 180 min</li>
+	<li>davon 55 min Rechnerstrukturen</li>
+</ul>
+<aside><ul>
+	<li>alt. 10:30–12:00 (1:30 h), 45 min Pause, 12:45–15:00 (2:15 h)</li>
+	<li>alt. 10:30–12:15 (1:45 h), 45 min Pause, 13:00–15:00 (2:00 h)</li>
+	<li>alt. 10:30–12:00 (1:30 h), 30 min Pause, 12:30–13:45 (1:15 h), 15 min Pause, 14:00–15:00 (1:00 h)</li>
+</ul></aside>
+</article>
+
+<article class="slide"><h3>Gliederung</h3>
+<ul>
+	<li>allgemeine Rechnerarchitektur</li>
+	<li>Daten und deren Repräsentation</li>
+	<li>Speichertechnologien, Massenspeicher</li>
+	<li>Bussysteme und Schnittstellen</li>
+	<li>Ethernet</li>
+	<li>Funktechnologien</li>
+	<li>Cloud Computing, Wiederholung</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Ablauf</h3>
+<ul>
+	<li>Anwesenheitsliste</li>
+	<li>Fragen jederzeit</li>
+	<li>bitte möglichst am Anfang oder <em>während</em> der Vorlesung, nicht danach</li>
+	<li>Rückfragen per Mail oder (besser!) auf Facebook/G+<ul>
+		<li>was nehmen wir?</li>
+	</ul></li>
+	<li>Folien/Skriptum entstehen während des Semesters</li>
+	<li>Link und Druckversion ab nächster Woche</li>
+	<li>viele weiterführende (Wikipedia-)Links</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Ein paar Worte zum ersten Semester</h3>
+<ul>
+	<li>dies ist eine Hochschule, Sie sind hier freiwillig</li>
+	<li>Fragen an mich oder alle: gern</li>
+	<li>Unterhaltungen untereinander: ungern</li>
+	<li>ich diktiere nichts, machen Sie sich eigenständig Notizen<ul>
+		<li>die Tafel mitzuschreiben ist womöglich klug</li>
+	</ul></li>
+	<li>Laptop, Telefon etc.: finden Sie raus, ob Sie gleichzeitig tumblern können und der Vorlesung folgen<ul>
+		<li>wenn nicht, lassen Sie eins von beidem bleiben</li>
+	</ul></li>
+	<li>lernen Sie <em>während</em> des Semesters, sonst ist es zu viel</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Ziel der Vorlesung</h3>
+<ul>
+	<li>worum geht es <em>Ihnen</em>?</li>
+</ul>
+</article>
+
+<h2>Allgemeine Rechnerarchitektur</h2>
+
+<article class="slide"><h3>Was ist ein Computer?</h3>
+<blockquote>
+	<p>Ein Computer oder Rechner ist ein Gerät, das mittels programmierbarer Rechenvorschriften Daten verarbeitet.</p>
+	<p><cite><a href="http://de.wikipedia.org/w/index.php?title=Computer&amp;oldid=123034903">Wikipedia: Computer</a></p>
+</blockquote>
+</article>
+
+<article class="slide"><h3>Beispiele für Computer</h3>
+<ul>
+	<li>PC, Mac</li>
+	<li>iPad</li>
+	<li>PlayStation</li>
+	<li>Mobiltelefon</li>
+	<li>Mikrocontroller</li>
+	<li>Waschmaschine</li>
+	<li>…</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Geschichte des Computers</h3>
+<ul>
+	<li>17. Jh.: erste <a href="http://de.wikipedia.org/w/index.php?title=Vier-Spezies-Maschine&amp;oldid=98123162">Vier-Spezies-Maschinen</a>, z.B. die <a href="http://de.wikipedia.org/w/index.php?title=Pascaline&amp;oldid=116771797">Pascaline</a><ul>
+		<li>Beispiel aus den 1940er Jahren: <a href="http://de.wikipedia.org/w/index.php?title=Curta&amp;oldid=120867847">Curta</a> (<a href="http://www.youtube.com/watch?v=HYsOi6L_Pw4">Demo-Video</a>)</li>
+	</ul></li>
+	<li>1940er: <a href="http://de.wikipedia.org/w/index.php?title=Zuse_Z3&amp;oldid=121577423">Zuse Z3</a>, <a href="http://de.wikipedia.org/w/index.php?title=ENIAC&amp;oldid=122274199">ENIAC</a></li>
+	<li>1960er/1970er: <a href="http://en.wikipedia.org/w/index.php?title=The_Mother_of_All_Demos&amp;oldid=575790443">The Mother of All Demos</a> (Maus, Hypertext, kollaborativer Echtzeiteditor), <a href="http://de.wikipedia.org/w/index.php?title=Xerox_Alto&amp;oldid=116884085">Xerox Alto</a> (erstes GUI)</li>
+	<li>1980er: <a href="http://de.wikipedia.org/w/index.php?title=Commodore_64&amp;oldid=122750327">Commodore 64</a> (Heimcomputer), <a href="http://de.wikipedia.org/w/index.php?title=Microsoft_Windows&amp;oldid=122790671">Windows</a></li>
+</ul>
+</article>
+
+<article class="slide"><h3>Aufbau eines heutigen Computers</h3>
+<ul>
+	<li>laut <a href="http://de.wikipedia.org/w/index.php?title=Personal_Computer&amp;oldid=122899149">Wikipedia</a> u.a. Hauptplatine, Hauptprozessor, Arbeitsspeicher, Grafikkarte, Netzteil, Festplatte, optisches Laufwerk, Monitor, Tastatur, Maus, Drucker</a></li>
+	<li>diese Vorlesung arbeitet von innen nach außen (bottom-up)<ul>
+		<li>erst die Basics, dann die „High-Level-Technologien“</li>
+	</ul></li>
+	<li>erst die Komponenten auf der Hauptplatine</li>
+	<li>dann tendenziell Dinge <em>im</em> Gehäuse</li>
+	<li>dann tendenziell Dinge <em>außerhalb</em></li>
+	<li>Grenze nicht immer eindeutig: es gibt z.B. interne und externe Festplatten</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Von-Neumann-Architektur (VNA): Überblick</h3>
+<ul>
+	<li><a href="http://de.wikipedia.org/w/index.php?title=Von-Neumann-Architektur&amp;oldid=123072929">Von-Neumann-Architektur</a>: grundlegendes Modell von 1945, wie ein universeller Rechner aufgebaut werden kann</li>
+	<li>beschreibt vier (oder fünf) Komponenten:<ul>
+		<li>Hauptprozessor (CPU, Central Processing Unit) mit<ul>
+			<li><strong>Rechenwerk</strong> (ALU, Arithmetic/Logic Unit) und</li>
+			<li><strong>Steuerwerk</strong> (Control Unit)</li>
+		</ul></li>
+		<li><strong>Speicherwerk</strong> (Memory Unit, Northbridge)</li>
+		<li><strong>Eingabe-/Ausgabewerk</strong> (I/O Unit, Southbridge)</li>
+		<li>(evtl. die Datenleitungen dazwischen: das <strong>Bussystem</strong>)</li>
+	</ul></li>
+</ul>
+</article>
+
+<article class="slide"><h3>VNA: Zusammenspiel der Komponenten</h3>
+<ul>
+	<li>trotz Schwächen basieren fast alle heutigen Computer auf der VNA</li>
+	<li>jede Komponente hat ein definiertes Aufgabengebiet</li>
+	<li>die VNA ist universell und programmierbar, d.h. was genau der Computer macht, wird durch ein <strong>Programm</strong> beschrieben</li>
+	<li>das Programm ist eine Liste von Befehlen, die (genau wie die zu verarbeitenden Daten) im <strong>Arbeitsspeicher</strong> des Computers liegen</li>
+	<li>anschaulich im Video <a href="http://www.youtube.com/watch?v=BUCZJWo9MZo">Man &amp; Computer</a> von 1965(!)</li>
+</ul>
+</article>
+
+<article class="slide"><h3>VNA: Rechenwerk</h3>
+<ul>
+	<li>die <a href="http://de.wikipedia.org/w/index.php?title=Arithmetisch-logische_Einheit&amp;oldid=121526014">arithmetisch-logische Einheit (ALU)</a> im Rechenwerk rechnet (s. <a href="http://de.wikipedia.org/w/index.php?title=Arithmetik&amp;oldid=122843524">Arithmetik</a>) und führt logische Operationen aus (s. <a href="http://de.wikipedia.org/w/index.php?title=Aussagenlogik&amp;oldid=123199321">Aussagenlogik</a> und <a href="http://de.wikipedia.org/w/index.php?title=Boolesche_Algebra&amp;oldid=121493308">Boolesche Algebra</a>)</li>
+	<li>die Operanden erhält das Rechenwerk über die <a href="http://de.wikipedia.org/w/index.php?title=Register_(Computer)&amp;oldid=121044332"><em>Register</em></a> und schreibt Ergebnisse und Statusinformationen auch dorthin wieder zurück, dadurch entsteht die Verbindung zum Steuerwerk</li>
+	<li>arithmetische Operationen z.B.: Addition, Subtraktion, Multiplikation</li>
+	<li>logische Operationen z.B.: Negation (NOT), Konjunktion (AND), Diskjunktion (OR) und Kontravalenz (XOR)</li>
+	<li>(die Vorlesung beschränkt sich auf einfache Ganzzahlarithmetik)</li>
+</ul>
+</article>
+
+<article class="slide"><h3>VNA: Steuerwerk</h3>
+<ul>
+	<li>das <a href="http://de.wikipedia.org/w/index.php?title=Steuerwerk&amp;oldid=122434618">Steuerwerk</a> liest und dekodiert Befehle aus dem Arbeitsspeicher</li>
+	<li>spricht die zuständige Einheit innerhalb der CPU an und stellt ihr die nötigen Informationen (z.B. Operanden) zur Verfügung</li>
+	<li>verwaltet den sog. <a href="http://de.wikipedia.org/w/index.php?title=Befehlsz%C3%A4hler&amp;oldid=116373714">Befehlszähler</a> (Program Counter, PC), der angibt, an welcher Speicherstelle (<em>Adresse</em>) der nächste Befehl steht<ul>
+		<li>wird normalerweise nach jedem Befehl auf die Adresse des nächsten gesetzt</li>
+		<li><a href="http://de.wikipedia.org/w/index.php?title=Sprunganweisung&amp;oldid=121945524">Sprungbefehle</a> können den PC beliebig verändern, z.B. abhängig von einer Entscheidung der ALU</li>
+	</ul></li>
+</ul>
+</article>
+
+<article class="slide"><h3>VNA: Ein-/Ausgabewerk</h3>
+<ul>
+	<li>das <a href="http://de.wikipedia.org/w/index.php?title=Eingabe-/Ausgabewerk&amp;oldid=63559750">Ein-/Ausgabewerk</a> stellt die Verbindung zu allen Geräten her, die nicht mehr zu den eng gefassten Komponenten der VNA gehören, der sog. <a href="http://de.wikipedia.org/w/index.php?title=Peripherieger%C3%A4t&amp;oldid=123102612">Peripherie</a></li>
+	<li>es beginnt ab der <a href="http://de.wikipedia.org/w/index.php?title=Southbridge&amp;oldid=122697849">Southbridge</a>, dahinter liegen Bussysteme wie SATA, PCIe und USB sowie die daran angeschlossenen Geräte (z.B. Grafikkarte, Festplatte, Tastatur, Drucker)</li>
+	<li>auch Dinge, die für Anwender*innen essentiell sind (z.B. Grafikkarte) gehören für die VNA schon zur Peripherie</li>
+</ul>
+</article>
+
+<article class="slide"><h3>VNA: Speicherwerk</h3>
+<ul>
+	<li>das <a href="http://de.wikipedia.org/w/index.php?title=Speicherwerk&amp;oldid=105153027">Speicherwerk</a> stellt die Verbindung zum <a href="http://de.wikipedia.org/w/index.php?title=Arbeitsspeicher&amp;oldid=123109249">Arbeitsspeicher (RAM)</a> her</li>
+	<li>es beginnt ab der <a href="http://de.wikipedia.org/w/index.php?title=Northbridge&amp;oldid=122697842">Northbridge</a>, dahinter liegen die Speichermodule des Arbeitsspeichers</li>
+	<li>Festplatten und andere Massenspeicher sind nicht Aufgabe des Speicherwerkes sondern normale Peripherie; die auf ihnen gespeicherten Daten müssen erst in den RAM transferiert werden, bevor mit ihnen gearbeitet werden kann</li>
+</ul>
+</article>
+
+<h2>Zahlensysteme</h2>
+
+<article class="slide"><h3>Das Binärsystem</h3>
+<ul>
+	<li>statt wie im <a href="http://de.wikipedia.org/w/index.php?title=Dezimalsystem&amp;oldid=123040087">Dezimalsystem</a> üblich zehn Ziffern (von 0 bis 9) zu verwenden, gibt es im <a href="http://de.wikipedia.org/w/index.php?title=Dualsystem&amp;oldid=122798693">Binärsystem</a> nur zwei Ziffern: 0 und 1</li>
+	<li>lässt sich gut in technischen Systemen abbilden: Strom fließt oder nicht, Loch oder nicht (Lochkarte), in eine Richtung magnetisiert oder die andere (Festplatte), Vertiefung oder nicht (CD) etc.</li>
+	<li>verschiedene Möglichkeiten der Markierung als Binärzahl:<ul>
+		<li>10111₂ („mit der Basis 2“)</li>
+		<li>10111b („Binärzahl“ mit Suffix)</li>
+		<li>0b10111 („Binärzahl“ mit Präfix, verwandt mit der Darstellung 027 (Oktalsystem) und 0x17 (Hexadezimalsystem))</li>
+	</ul></li>
+</ul>
+</article>
+
+<article class="slide"><h3>Bits und Bytes</h3>
+<ul>
+	<li>Computer verwenden binäre Zustände als kleinste Informationseinheit: das <a href="http://de.wikipedia.org/w/index.php?title=Bit&amp;oldid=122590180">Bit</a> ist genau eine Binärziffer, also 0 oder 1</li>
+	<li>mit diesen Ziffern rechnet der Computer</li>
+	<li>ein <a href="http://de.wikipedia.org/w/index.php?title=Byte&amp;oldid=123068182">Byte</a> oder <em>Oktett</em> ist eine Folge von 8 Bit</li>
+	<li>mit einem Bit lassen sich 2 Zustände bzw. Kombinationen, mit zwei Bit 4, mit drei Bit 8, mit vier Bit 16 und mit 8 Bit 256 Zustände darstellen</li>
+	<li>ein Byte hat also 256 Kombinationen oder einen Zahlenwert von 0 bis 255</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Rechnen im Binärsystem</h3>
+<ul>
+	<li>Addition wie im Dezimalsystem: 0 + 0 = 0, 0 + 1 = 1, 1 + 1 = 10</li>
+	<li>Addition zweier Ziffern entspricht (wenn man den Übertrag außer Acht lässt) einem XOR (Kontravalenz)</li>
+	<li>Übertrag der Addition zweier Ziffern entspricht einem AND (Konjunktion)</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Das Hexadezimalsystem</h3>
+<ul>
+	<li>das <a href="http://de.wikipedia.org/w/index.php?title=Hexadezimalsystem&amp;oldid=122578583">Hexadezimalsystem</a> verwendet 16 Ziffern: die arabischen Ziffern von 0 bis 9 und danach die Buchstaben von a bis f</li>
+	<li><em>a</em> entspricht also der 10, <em>f</em> der 15</li>
+	<li>Vorteil: zwei Hex-Ziffern haben 16²=256 Kombinationen, können also genau ein Byte darstellen</li>
+	<li>verschiedene Möglichkeiten der Markierung als Hexzahl:<ul>
+		<li>c4f3₁₆ („mit der Basis 16“)</li>
+		<li>c4f3h („Hexadezimalzahl“ mit Suffix)</li>
+		<li>0xc4f3 („Hexadezimalzahlzahl“ mit Präfix)</li>
+	</ul></li>
+</ul>
+</article>
+
+<article class="slide"><h3>Rechnen im Hexadezimalsystem</h3>
+<ul>
+	<li>Addition wieder wie im Dezimalsystem: 2 + 6 = 8, 8 + 5 = d, d + 8 = 15</li>
+	<li>Umrechnung von und in Binär ganz einfach, da je 4 Bit einer Hex-Ziffer entsprechen<ul>
+		<li>0xd = 0b1101, 0x8 = 0b1000, 0xd8 = 0b11011000</li>
+	</ul></li>
+</ul>
+</article>
+
+</body>
+
+</html>
