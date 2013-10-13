@@ -274,6 +274,157 @@ Da ich nur montags Zeit habe, müssen die 36x 45 Minuten in sieben relativ lang
 </ul>
 </article>
 
+<h2>Daten und deren Repräsentation</h2>
+
+<article class="slide"><h3>Zahlen und Buchstaben aus Strom</h3>
+<ul>
+	<li>ein Computer arbeitet ausschließlich digital: mit den zwei Zuständen 1 und 0 bzw. ›Strom‹ und ›kein Strom‹</li>
+	<li>alle Zahlen, Buchstaben, Zeichen, Grafiken, Farben, Töne etc. werden intern als Einsen und Nullen gespeichert und verarbeitet</li>
+	<li>wir Menschen bestimmen, wie die Übersetzung funktioniert und welche Rechenregeln es gibt</li>
+	<li>›01000001‹ sieht man nicht an, ob es die Zahl 65, der Buchstabe A oder ein 25% deckendes Dunkelrot ist</li>
+</ul>
+</article>
+
+<h2>Darstellungen von Zahlen</h2>
+
+<article class="slide"><h3>Negative Zahlen</h3>
+<ul>
+	<li>bei der Umrechnung ins Binärsystem haben wir bislang nur positive Ganzzahlen betrachtet</li>
+	<li>für negative Zahlen müssten wir ein „Minus“ voranstellen, also z.B. definieren: steht im ganz linken Bit eine 0, ist die Zahl positiv; steht dort eine 1 negativ</li>
+	<li>Zahlenbereich bei 8 Bit dann -127 bis 127</li>
+	<li>führt aber zu Problemen: es gibt +0 und -0, außerdem Probleme beim Rechnen (vgl. <a href="http://de.wikipedia.org/w/index.php?title=Einerkomplement&amp;oldid=120010272#Rechenoperationen_und_Probleme">Einerkomplement</a>)</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Das Zweierkomplement</h3>
+<ul>
+	<li>das <a href="http://de.wikipedia.org/w/index.php?title=Zweierkomplement&amp;oldid=122283687">Zweierkomplement</a> definiert (für 8-Bit-Zahlen): 0=00000000, 1=00000001 etc., 127=01111111 und dann -128=10000000, -127=10000001, -2=11111110 und -1=11111111</li>
+	<li>Umwandlung von Dezimal in Zweierkomplement (Beispiel -22 bei 8 Bit):<ol>
+		<li>ohne Vorzeichen in Binärsystem umrechnen: 00010110</li>
+		<li>alle Stellen invertieren: 11101001</li>
+		<li>1 addieren: 11101010 (entspricht bei Interpretation „vorzeichenbehaftete Ganzzahl im Zweierkomplement“ der -22, bei Interpretation „vorzeichenlose Ganzzahl“ aber der 234)</li>
+	</ol></li>
+	<li>das Zweierkomplement hat nur eine Darstellung der Null und Vorteile beim Rechnen:</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Subtraktion mittels Zweierkomplement</h3>
+<ul>
+	<li>Zahlen im Zweierkomplement sind dergestalt, dass ein „normales“ Addierwerk mit ihnen rechnen kann, ohne zu wissen, dass es negative Zahlen sind!</li>
+	<li>Beispiel: 70 - 22, ist äquivalent zu 70 + (-22)</li>
+	<li>01000110 + 11101010 = (1)00110000</li>
+	<li>lesbar als 70 + 234 = 48 (mit Überlauf, 304 ist nicht in 8 Bit darstellbar)  oder 70 + (-22) = 48 (Überlauf wird ignoriert)</li>
+</ul>
+</article>
+
+<article class="slide"><h3>mehr als 8 Bit</h3>
+<ul>
+	<li>Prozessoren können heutzutage mit Zahlen umgehen, die größer sind als 8 Bit</li>
+	<li>ein 64-Bit-Prozessor z.B. mit Zahlen, die bis zu 64 Bit groß sind, also ca. ±9,22337204e18</li>
+	<li>16 Bit nennt man ein <em>Wort</em> (engl. word), 32 ein <em>Doppelwort</em> (double word), 64 ein Quad-Wort (quad word)</li>
+	<li>Prozessoren haben heute meist 32 oder 64 Bit</li>
+	<li>für größere Zahlen gibt es Software, die unabhängig von der Arithmetik im Prozessor rechnet</li>
+	<li>oder Fließkommazahlen</li>
+</ul>
+</article>
+
+<h2>Darstellungen von Zeichen</h2>
+
+<article class="slide"><h3>ASCII</h3>
+<ul>
+	<li>American Standard Code for Information Interchange</li>
+	<li>ordnet den 7-Bit-Zahlen von 0 bis 127 jeweils ein Zeichen zu</li>
+	<li>33 „nicht druckbare“ oder „Steuerzeichen“ (z.B. Leerzeichen, Zeilenumbruch, Glocke, Ende des Datensatzes), 95 „druckbare“ Zeichen (lateinische Buchstaben, arabische Ziffern, Interpunktion)</li>
+	<li>kennt also 128 Zeichen oder „Codepunkte“</li>
+	<li>viele Zeichen fehlen (Umlaute, Sonderzeichen, Symbole, nicht-lateinische Alphabete)</li>
+	<li>viele Codepunkte stehen für mehrere ähnlich oder gleich aussehende Zeichen mit unterschiedlicher Semantik, z.B. ›-‹ für Bindestrich und Minus, ›"‹ für Anführungszeichen, Zoll, Sekunde</li>
+</ul>
+</article>
+
+<article class="slide"><h3>ISO 8859-1 („Latin-1“)</h3>
+<ul>
+	<li>benutzt 8 Bit, die ersten 128 Zeichen sind identisch zu ASCII</li>
+	<li>128–255 enthalten weitere 32 Steuer- und 96 druckbare Zeichen</li>
+	<li>Umlaute, kl. Eszett, Cent, Pfund, Yen, Copyright, Paragraph, Guillemets etc., geschütztes Leerzeichen (non-breaking space, NBSP) und bedingter Trennstrich (soft hyphen, SHY)</li>
+	<li>beinhaltet natürlich wieder nicht alle Zeichen, sondern nur ein paar mehr</li>
+</ul>
+</article>
+
+<article class="slide"><h3>ISO 8859-15 („Latin-9“)</h3>
+<ul>
+	<li>fast identisch mit Latin-1</li>
+	<li>8 Zeichen geändert, volle Unterstützung für Französisch, Finnisch und Eurozeichen</li>
+	<li>ebenfalls sehr ähnlich: Windows-1252</li>
+</ul>
+</article>
+
+<article class="slide"><h3>ISO 8859-5 (Kyrillisch), KOI8-R</h3>
+<ul>
+	<li>für das kyrillische Alphabet gibt es ISO 8859-5 und die verbreiteteren Zeichensätze KOI8-R für Russisch und Bulgarisch sowie KOI8-U für Ukrainisch</li>
+	<li>auch diese Zeichensätze setzen auf ASCII auf, beinhalten also das lateinische Alphabet, aber beispielsweise keine deutschen Umlaute</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Konkurrierende Zeichensätze</h3>
+<ul>
+	<li>es gibt eine zweistellige Anzahl Zeichensätze, die mehr oder weniger inkompatibel zueinander sind, weil sie an den selben Codepunkten unterschiedliche Zeichen beinhalten</li>
+	<li>z.B. steht in Latin-1 an Stelle 228 (0xE4) ein ä, in 8859-5 aber ein ф (Ef) und in KOI8-R ein Д (De)</li>
+	<li>man muss also wissen, in welchem Zeichensatz eine Datei verfasst wurde, um sie lesen zu können</li>
+	<li>benutzt man den falschen Zeichensatz, entsteht unleserlicher Zeichensalat (jap. <em>mojibake</em>, verformte Buchstaben)</li>
+	<li>z.B. »Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства.« als 8859-5 gespeichert, aber als 8859-1 gelesen: »ÈØàÞÚÐï íÛÕÚâàØäØÚÐæØï îÖÝëå ÓãÑÕàÝØÙ ÔÐáâ ÜÞéÝëÙ âÞÛçÞÚ ßÞÔêñÜã áÕÛìáÚÞÓÞ åÞ×ïÙáâÒÐ.«</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Unicode</h3>
+<ul>
+	<li>um das Zeichensatzchaos zu beenden, entschloss man sich, einen universellen Zeichensatz (Universal Character Set, UCS) zu definieren</li>
+	<li>Ziel: allen Zeichen der Welt einen eindeutigen Codepunkt zuweisen</li>
+	<li>ursprünglich dachte man, 65.536 Zeichen (16 Bit) reichen</li>
+	<li>inzwischen sind in Unicode 17 Ebenen (Planes) à 65.536 Zeichen vorgesehen, also 1.114.112 Zeichen</li>
+	<li>durchnummeriert mit „U+“ gefolgt von Zeichennummer in Hex, (führende) Nullen der Ebenennummer dürfen weggelassen werden: U+0000 bis U+10FFFF</li>
+	<li>wird seit 1991 ständig weiterentwickelt und beinhaltet auch Regeln für den Umgang mit den Zeichen (Umbruch, Groß-/Kleinschreibung, Kombination) und Kategorisierungen (Buchstabe, Ziffer, Symbol, Weißraum etc.)</li>
+	<li>Nachteil: passt nicht mehr in 8 Bit, nicht mal in 16</li>
+</ul>
+</article>
+
+<article class="slide"><h3>UTF</h3>
+<ul>
+	<li>Unicode selbst gibt nur die Codepunkte vor, die Darstellung in Bits und Bytes obliegt den sog. <em>UCS Transformation Formats</em> (UTF)</li>
+	<li>man unterscheidet sie nach der Anzahl Bits, die sie mindestens benötigen, um ein Zeichen darzustellen</li>
+	<li>die Anzahl Bytes pro Zeichen ist also teilweise variabel</li>
+	<li>häufiger vorkommende Zeichen werden mit weniger Bytes dargestellt, seltener vorkommende mit mehr</li>
+	<li>das ist recht einfach zu bewerkstelligen, weil sie in Unicode grob nach Häufigkeit sortiert sind: häufige Zeichen kommen früher in der Nummerierung und haben daher eine kleine Codepunkt-Nummer</li>
+</ul>
+</article>
+
+<article class="slide"><h3>UTF-8</h3>
+<ul>
+	<li>variable Länge: ein Zeichen wird mit 1–4 Byte dargestellt</li>
+	<li>ASCII wird identisch codiert (1 Byte, 0–127, U+0000–U+007F)</li>
+	<li>Multi-Byte-Sequenzen haben ein Startbyte (beginnt mit 11) und 1–3 Folgebytes (beginnen mit 10)</li>
+	<li>Anzahl Folgebytes ist im Startbyte kodiert: beginnt es mit 110 folgt eins, bei 1110 zwei und bei 11110 drei</li>
+	<li>führende Nullen des Codepunkts werden in UTF-8 weggelassen, aber immer auf 7, 11, 16 oder 21 Stellen behalten (ganze Bytegrenze)</li>
+	<li>Beispiel an der Tafel</li>
+</ul>
+</article>
+
+<article class="slide"><h3>UTF-16</h3>
+<ul>
+	<li>ursprüngliche Idee: feste Länge für alle 65.536 Unicode-Zeichen</li>
+	<li>seit Unicode mehr als 65.536 Zeichen hat, ist dieser Vorteil dahin</li>
+	<li>UTF-16 benutzt für die Zeichen aus Ebene 0 (Basic Multilingual Plane, BMP) 2 Bytes, für alle anderen 4 Bytes</li>
+	<li>seltener eingesetzt als UTF-8, aber von Windows intern häufig verwendet</li>
+</ul>
+</article>
+
+<article class="slide"><h3>UTF-32</h3>
+<ul>
+	<li>4 Byte pro Zeichen, daher feste Länge für alle Unicode-Zeichen</li>
+	<li>Vorteil: für Software einfacher zu lesen und zu verarbeiten da feste Länge; Anzahl Zeichen direkt aus Anzahl Bytes berechenbar und umgekehrt</li>
+	<li>Nachteil: erhöhter Platzbedarf, benötigt z.B. für deutsche Texte fast viermal so viel Speicher</li>
+</ul>
+</article>
+
 </body>
 
 </html>
