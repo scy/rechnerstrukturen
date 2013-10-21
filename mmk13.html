@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="UTF-8" />
+	<title>Rechnerstrukturen – MMK13</title>
 	<link rel="stylesheet" href="scylec/scylec-2013.css" />
 	<script src="scylec/jquery-1.10.2.min.js"></script>
 	<script src="scylec/scylec.js"></script>
@@ -439,18 +440,18 @@ Da ich nur montags Zeit habe, müssen die 36x 45 Minuten in sieben relativ lang
 
 <article class="slide"><h3>Massenspeicher</h3>
 <ul>
-	<li>speichern im Gegensatz zum Arbeitsspeicher Daten permanent und in größerem Umfang</li>
+	<li><a href="http://de.wikipedia.org/w/index.php?title=Massenspeicher&amp;oldid=118539284">Massenspeicher</a> speichern im Gegensatz zum <a href="http://de.wikipedia.org/w/index.php?title=Arbeitsspeicher&amp;oldid=123468969">Arbeitsspeicher</a> (RAM) Daten permanent und in größerem Umfang</li>
 	<li>jedoch weit langsamer als RAM</li>
 	<li>Beispiele: Lochkarten, Magnetbänder, Disketten, Festplatten, CD/DVD/BD, USB-Sticks, SD-Karten</li>
 	<li>Speicherkapazität inzwischen mehrere Terabyte</li>
 </ul>
 </article>
 
-<article class="slide"><h3>(Binär-)Präfixe</h3>
+<article class="slide"><h3>Binärpräfixe</h3>
 <ul>
-	<li>Kilo: 10³, Mega: 10⁶, Giga: 10⁹, Tera: 10¹², Peta: 10¹⁵ (jeweils ×1000)</li>
+	<li>Kilo: 10³, Mega: 10⁶, Giga: 10⁹, Tera: 10¹², Peta: 10¹⁵ (jeweils ×1000, „Dezimalpräfixe“)</li>
 	<li>in der IT werden gern Zweierpotenzen verwendet, und so wurden sowohl 1000 Byte als auch 1024 Byte „ein Kilobyte“ genannt</li>
-	<li>um diese Mehrdeutigkeit loszuwerden, gibt es neue, „Binär“prefixe:</li>
+	<li>um diese Mehrdeutigkeit loszuwerden, gibt es neue, „<a href="http://de.wikipedia.org/w/index.php?title=Bin%C3%A4rpr%C3%A4fix&amp;oldid=123199738">Binärpräfixe</a>“:</li>
 	<li>Kibi: 2¹⁰, Mebi: 2²⁰, Gibi: 2³⁰, Tebi: 2⁴⁰, Pebi: 2⁵⁰ (jeweils ×1024)</li>
 	<li>1 Terabyte (TB) = 1.000.000.000.000 Byte = 931,3 Gibibyte</li>
 	<li>1 Tebibyte (TiB) = 1.099.511.627.776 Byte</li>
@@ -460,8 +461,7 @@ Da ich nur montags Zeit habe, müssen die 36x 45 Minuten in sieben relativ lang
 
 <article class="slide"><h3>Festplatte</h3>
 <ul>
-	<li>magnetische Speicherung</li>
-	<li>mehrere magnetisierbare runde Scheiben übereinander</li>
+	<li><a href="http://de.wikipedia.org/w/index.php?title=Festplattenlaufwerk&amp;oldid=123171888">Festplatte</a>: mehrere magnetisierbare runde Scheiben übereinander (magnetische Speicherung)</li>
 	<li>konzentrische <em>Spuren</em>, jede enthält mehrere <em>Blöcke</em></li>
 	<li>Gesamtheit aller übereinander befindlichen Spuren: <em>Zylinder</em></li>
 	<li>Gesamtheit aller Blöcke mit dem selben Winkel („auf dem selben Kuchenstück“): <em>Sektor</em></li>
@@ -472,15 +472,14 @@ Da ich nur montags Zeit habe, müssen die 36x 45 Minuten in sieben relativ lang
 <ul>
 	<li>sich gemeinsam an einer Art „Kamm“ befindliche Schreib-Lese-Köpfe schweben über den Scheiben, einer pro Scheibenseite</li>
 	<li>Messgrößen: Spurwechselzeit (Zeit bis Kopf über korrekter Spur), Latenz (Zeit bis korrekter Block am Vorbeirotieren), Datenrate (MB/s, die gelesen werden)</li>
-	<li>staub-, aber nicht luftdicht (Druckausgleich, kein Vakuum)</li>
+	<li>Gehäuse staub-, aber nicht luftdicht (Druckausgleich, kein Vakuum)</li>
 	<li>Videos: <a href="http://www.youtube.com/watch?v=kdmLvl1n82U">Erklärung</a>, <a href="http://www.youtube.com/watch?v=JAVIdoN5Yac">in Aktion</a></li>
 </ul>
 </article>
 
 <article class="slide"><h3>Compact Disc (CD)</h3>
 <ul>
-	<li>optische Speicherung</li>
-	<li>mit mikroskopischen Vertiefungen („Pits“, Flächen außenrum heißen „Lands“) versehene runde Kunststoffscheiben</li>
+	<li><a href="http://de.wikipedia.org/w/index.php?title=Compact_Disc&amp;oldid=123541976">CD</a>: mit mikroskopischen Vertiefungen („Pits“, Flächen außenrum heißen „Lands“) versehene runde Kunststoffscheiben (optische Speicherung)</li>
 	<li>„normale“ 74-Minuten-CD enthält 333.000 Sektoren mit je 2.352 Byte</li>
 	<li>Daten-CDs verwenden 304 Bytes pro Sektor für Redundanz/Fehlerkorrektur, 2.048 Byte übrig, also 650,4 MiB</li>
 	<li>bei Musik keine Redundanz: 783.216.000 Byte, bei 44,1 kHz 16 Bit stereo (also 176.400 Byte/s) exakt 74 Minuten</li>
@@ -498,7 +497,7 @@ Da ich nur montags Zeit habe, müssen die 36x 45 Minuten in sieben relativ lang
 
 <article class="slide"><h3>DVD („Digital Versatile Disc“)</h3>
 <ul>
-	<li>Aufbau wie CD, aber kleinere Pits und engere Spuren, da Laser kürzere Wellenlänge besitzt, außerdem liegt die Datenschicht jetzt näher am Laser</li>
+	<li><a href="http://de.wikipedia.org/w/index.php?title=DVD&amp;oldid=123501916">DVD</a>: Aufbau wie CD, aber kleinere Pits und engere Spuren, da Laser kürzere Wellenlänge besitzt, außerdem liegt die Datenschicht jetzt näher am Laser</li>
 	<li>daher mehr Kapazität: 4,7 GB (4,37 GiB)</li>
 	<li>außerdem als Dual Layer verfügbar: zwei Schichten Daten in der DVD, Laser fokussiert um</li>
 	<li>alternativ oder zusätzlich auch Double Side möglich: Daten auf beiden Seiten, Reflexionsschicht in der Mitte</li>
@@ -519,7 +518,7 @@ Da ich nur montags Zeit habe, müssen die 36x 45 Minuten in sieben relativ lang
 
 <article class="slide"><h3>Blu-ray Disc (BD)</h3>
 <ul>
-	<li>noch mal mehr Kapazität durch kürzere Wellenlänge, kleinere Pits, engere Spuren und nähere Datenschicht: 25 GB pro Layer</li>
+	<li><a href="http://de.wikipedia.org/w/index.php?title=Blu-ray_Disc&amp;oldid=123528728">Blu-ray</a>: noch mal mehr Kapazität durch kürzere Wellenlänge, kleinere Pits, engere Spuren und nähere Datenschicht: 25 GB pro Layer</li>
 	<li>2 Layer (50 GB) sind Standard für Filme, es gibt auch Versionen und Experimente mit 3 oder 4 Layern mit teilweise bis zu 200 GB</li>
 	<li>Geschwindigkeitsangabe wieder als Faktor, diesmal ist 1× 4,5 MB/s</li>
 </ul>
@@ -527,7 +526,7 @@ Da ich nur montags Zeit habe, müssen die 36x 45 Minuten in sieben relativ lang
 
 <article class="slide"><h3>Solid State Drive (SSD)</h3>
 <ul>
-	<li>elektrische Speicherung auf Halbleitern</li>
+	<li><a href="http://de.wikipedia.org/w/index.php?title=Solid-State-Drive&amp;oldid=123362580">SSD</a>: elektrische Speicherung auf Halbleitern</li>
 	<li>entweder RAM-basiert („RAM-Disk“, verliert ohne Strom sofort alle Daten) oder Flash-basiert</li>
 	<li>letzteres versteht die Allgemeinheit unter SSDs, RAM-Disks existieren hauptsächlich für den professionellen Einsatz in Servern etc.</li>
 	<li>auch USB-Sticks, SD-Karten etc. sind Flash-SSDs</li>
@@ -542,7 +541,7 @@ Da ich nur montags Zeit habe, müssen die 36x 45 Minuten in sieben relativ lang
 	<li>Flash-Speicherzellen können nur begrenzt oft beschrieben werden („1–5 Millionen Schreibvorgänge“)</li>
 	<li>SSD speichert daher möglichst „gleichmäßig“ auf Zellen verteilt und nicht dort, wo das Betriebssystem angibt</li>
 	<li>(SSD „merkt“ sich natürlich diese „Umleitungen“)</li>
-	<li>außerdem besitzt sie zum Ausgleich „Reservezellen“ (noch mal ca. 10% der Speicherkapazität)</li>
+	<li>außerdem besitzt sie zum Ausgleich „Reservezellen“ (z.B. noch mal 10% der Speicherkapazität)</li>
 </ul>
 </article>
 
