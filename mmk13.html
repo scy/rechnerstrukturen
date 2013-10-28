@@ -72,7 +72,7 @@ Da ich nur montags Zeit habe, müssen die 36x 45 Minuten in sieben relativ lang
 	<li>allgemeine Rechnerarchitektur</li>
 	<li>Daten und deren Repräsentation</li>
 	<li>Speichertechnologien, Massenspeicher</li>
-	<li>Bussysteme und Schnittstellen</li>
+	<li>Schnittstellen und Bussysteme</li>
 	<li>Ethernet</li>
 	<li>Funktechnologien</li>
 	<li>Cloud Computing, Wiederholung</li>
@@ -554,6 +554,193 @@ Da ich nur montags Zeit habe, müssen die 36x 45 Minuten in sieben relativ lang
 	<li>generell: keine verlässlichen Zahlen</li>
 	<li>wichtige Daten doppelt sichern</li>
 	<li>aktiv halten: nicht einfach 5 Jahre in den Schrank legen, sondern umkopieren</li>
+</ul>
+</article>
+
+<h2>Schnittstellen und Bussysteme</h2>
+
+<article class="slide"><h3>grobe Einordnung</h3>
+<ul>
+	<li>unter einer <em>Schnittstelle</em> verstehen wir einen Teil oder Punkt eines Systems, der benutzt wird, um mit anderen Systemen oder Komponenten zu kommunizieren bzw. zu interagieren</li>
+	<li>alle in diesem Kapitel behandelten Technologien sind dieser Definition nach Schnittstellen</li>
+	<li>manche Schnittstellen können nur zur Kommunikation mit genau <em>einer</em> Gegenstelle verwendet werden: wir nennen sie <em>Punkt-zu-Punkt-Schnittstellen</em> (z.B. EIA-232, PS/2)</li>
+	<li>andere Schnittstellen erlauben es einer Kette von Teilnehmern, miteinander zu kommunizieren, ohne dass sie sich die Daten gegenseitig aktiv weiterleiten müssen: entweder jeder mit jedem oder alle Teilnehmer der Kette mit einem bestimmten; wir nennen sie <em>Bussysteme</em></li>
+	<li>werden die Bits einzeln hintereinander übertragen, spricht man von einer <em>seriellen</em>, bei mehreren Bits (z.B. 1–4 Byte) gleichzeitig von einer <em>parallelen</em> Schnittstelle</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Punkt-zu-Punkt vs. Bus</h3>
+<ul>
+	<li>manche Schnittstellen können nur zur Kommunikation mit genau <em>einer</em> Gegenstelle verwendet werden: wir nennen sie <em>Punkt-zu-Punkt-Schnittstellen</em> (z.B. EIA-232, PS/2)</li>
+	<li>andere Schnittstellen erlauben es einer Kette von Teilnehmern, miteinander zu kommunizieren, ohne dass sie sich die Daten gegenseitig aktiv weiterleiten müssen: entweder jeder mit jedem oder alle Teilnehmer der Kette mit einem bestimmten; wir nennen sie <em>Bussysteme</em></li>
+</ul>
+</article>
+
+<article class="slide"><h3>seriell vs. parallel</h3>
+<ul>
+	<li>werden die Bits einzeln hintereinander übertragen, spricht man von einer <em>seriellen</em> Schnittstelle</li>
+	<li>bei mehreren Bits (z.B. 1–4 Byte) gleichzeitig von einer <em>parallelen</em> Schnittstelle</li>
+	<li>Schnittstellen können entweder Punkt-zu-Punkt oder als Bus aufgebaut sein</li>
+	<li>Schnittstellen können entweder seriell oder parallel aufgebaut sein</li>
+</ul>
+</article>
+
+<h2>externe Schnittstellen</h2>
+
+<article class="slide"><h3>RS-232 (auch: EIA-232)</h3>
+<ul>
+	<li>Punkt-zu-Punkt, seriell (<em>die</em> serielle Schnittstelle)</li>
+	<li>urspr. 25-poliger, später 9-poliger D-Sub-Stecker</li>
+	<li>teils auch als Modular-Stecker („RJ45“, „Westernstecker“) oder ganz anders ausgeführt</li>
+	<li>verschiedene Geschwindigkeiten, z.B. 1.200 bit/s, 9.600 bit/s, 57.600 bit/s („56k-Modem“), 115.200 bit/s</li>
+	<li>Kabellänge abhängig von Übertragungsdate bis ca. 900 m, eher 2–5 m</li>
+	<li>früher: Mäuse, Modems, Direktverbindungen zwischen Rechnern, GPS-Empfänger, Mobiltelefone, …</li>
+	<li>heute nahezu ausgestorben, höchstens Bastler (Mikrocontroller)</li>
+</ul>
+</article>
+
+<article class="slide"><h3>IEEE 1284</h3>
+<ul>
+	<li>Punkt-zu-Punkt, parallel (<em>die</em> „parallele Schnittstelle“, „Parallelport“, „Centronics-Schnittstelle“)</li>
+	<li>36-poliger „Centronics“-Stecker und/oder 25-poliger D-Sub-Stecker</li>
+	<li>Übertragung eines ganzen Byte auf einmal</li>
+	<li>div. Modi, z.B. für bidirektionale Kommunikation</li>
+	<li>übliche Geschwindigkeiten: 150 kb/s, 2 MB/s (EPP), 2,5 MB/s (ECP)</li>
+	<li>Kabellänge 6–12 m, mit Spezialkabeln bis 30 m</li>
+</ul>
+</article>
+
+<article class="slide"><h3>PS/2</h3>
+<ul>
+	<li>Punkt-zu-Punkt, seriell</li>
+	<li>6-poliger Mini-DIN-Stecker</li>
+	<li>für Tastatur (violett) und Maus (grün)</li>
+	<li>es gibt auch Universalbuchsen (v.a. an Laptops), die das angeschlossene Gerät erkennen</li>
+	<li>„Adapter“ PS/2-zu-USB meist nur elektrische Verbinder, Tastatur/Maus muss PS/2 <em>und</em> USB beherrschen</li>
+	<li>nicht hotplug-fähig (Beschädigungen möglich!)</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Universal Serial Bus (USB)</h3>
+<ul>
+	<li>Bus, seriell</li>
+	<li>Stecker je nach „Ende“ unterschiedlich: am Host Typ A, am Gerät Typ B</li>
+	<li>1.0 (1995), 1.1 (1998): 1,5 Mbit (Low Speed), 12 Mbit (Full Speed), 5 V, 100/500 mA</li>
+	<li>2.0 (2000): 480 Mbit (Hi-Speed)</li>
+	<li>3.0 (2008): 4000 Mbit (SuperSpeed), 900 mA, neue Kabel/Stecker</li>
+	<li>Kabel max. 5 m (Low Speed) bzw. 3 m (Full/Hi-Speed)</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Universal Serial Bus (USB)</h3>
+<ul>
+	<li>Hubs sorgen für mehr Ports (max. 127 Geräte), Stromversorgung entweder über den Host (bus-powered) oder ein eigenes Netzteil (self-powered)</li>
+	<li>USB ist hotplugfähig</li>
+	<li>generische Treiber für Geräteklassen bereits im Standard, spezifische Treiber daher meist überflüssig</li>
+	<li>z.B. Massenspeicher, Audio, HID (Human Interface Device, also Tastatur/Maus etc.)</li>
+	<li>der Computer (Host) ist verantwortlich für Steuerung, Adresszuteilung etc.</li>
+	<li>USB On-The-Go: Geräte implementieren Host-Funktionalitäten, z.B. damit Mobiltelefon Fotos von Digitalkamera laden kann</li>
+</ul>
+</article>
+
+<article class="slide"><h3>IEEE 1394 („FireWire“)</h3>
+<ul>
+	<li>Bus, seriell</li>
+	<li>ähnlich USB, früher begonnen (1980er), etwa gleichzeitig fertiggestellt</li>
+	<li>1394a („FireWire 400“), 1995: 100/200/400 Mbit, 8–30 V, 1500 mA</li>
+	<li>sechspolige Stecker: 4 Datenleitungen, 2 Spannungsversorgung; vierpolige (kleine) Stecker ohne Spannungsversorung</li>
+	<li>1394b („FireWire 800“), 2002: 800 Mbit, neue Kabel/Stecker (neunpolig, „beta“)</li>
+	<li>FireWire 3200, 2008: 3200 Mbit, Geräteangebot eher mau</li>
+	<li>Kabel max. 4,5 m (400), mit 1394b auch länger (&gt; 100 m) möglich (bei reduzierter Geschwindigkeit)</li>
+	<li>Geräteketten möglich („daisy chaining“)</li>
+	<li>kein Host nötig</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Thunderbolt</h3>
+<ul>
+	<li>Bus, seriell</li>
+	<li>erste Geräte 2011, kombiniert DisplayPort und PCI Express</li>
+	<li>20-poliger Mini-DisplayPort-Stecker, 10 Watt</li>
+	<li>ursprünglich als optisches Interface gedacht (auch noch in Planung)</li>
+	<li>4 Kanäle mit je 10 Gbit pro Sekunde und Richtung, ergo 20 Gbit vollduplex</li>
+	<li>Daisychaining von bis zu 7 Geräten, davon max. 2 (HD-)Displays</li>
+	<li>abwärtskompatibel zu DisplayPort, dafür muss DisplayPort-Gerät aber am Ende der Kette liegen</li>
+	<li>Storage-Geräte, z.B. Festplatten (300 MB/s) bereits erhältlich</li>
+</ul>
+</article>
+
+<h2>interne Schnittstellen</h2>
+
+<article class="slide"><h3>PATA/IDE (ATA/ATAPI)</h3>
+<ul>
+	<li>Advanced Technology Attachment: Protokoll für Kommunikation zw. Computer und Massenspeichern</li>
+	<li>Integrated Device Electronics: Stecker-/Kabelstandard für gehäuseinterne Verkabelung</li>
+	<li>Bus, parallel, 40-poliges Flachbandkabel, 16 Bit, zwei Geräte (Master/Slave) an einem Kabel</li>
+	<li>1989 ATA-1 (8,3 MB/s), 1994 ATA-2 (16,6 MB/s), 1996 ATA-3 (S.M.A.R.T.)</li>
+	<li>1994 ATA/ATAPI-4 (Unterstützung für CD-ROM und Brenner, Erweiterung um SCSI-Kommandos via „Packet Interface“)</li>
+	<li>seit ATA/ATAPI-7 (2001) 133 MB/s, außerdem kam SATA hinzu (selbe Kommandos, aber serielle Übertragung), alte parallele Variante wird jetzt PATA genannt</li>
+	<li>Strom über 4-poligen Molexstecker</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Serial ATA (SATA)</h3>
+<ul>
+	<li>seriell, Punkt-zu-Punkt (nur noch ein Gerät pro Kabel)</li>
+	<li>7-poliges Flachbandkabel, max. 1 m</li>
+	<li>Strom über 15-poligen Stecker</li>
+	<li>2002 SATA 1.5 Gbit/s („SATA I“): 150 MB/s</li>
+	<li>2005 SATA 3.0 Gbit/s („SATA II“): 300 MB/s, außerdem neu: externes SATA (eSATA, außerhalb des PC-Gehäuses)</li>
+	<li>2009 SATA 6.0 Gbit/s („SATA III“): 600 MB/s, vorrangig für SSDs (magn. Festplatten sind zu langsam)</li>
+	<li>eSATA: für externen Einsatz optimierte Kabel (max. 2 m) und Stecker</li>
+	<li>leider noch kein einheitlicher Standard für eSATA-Strom</li>
+</ul>
+</article>
+
+<article class="slide"><h3>PCI</h3>
+<ul>
+	<li>Peripheral Component Interconnect</li>
+	<li>Busstandard für Erweiterungskarten auf dem Mainboard</li>
+	<li>ca. 1993, löste ISA ab</li>
+	<li>32-Bit-, später 64-Bit-Parallelbus</li>
+	<li>133 MB/s bis 533 MB/s, je nach Version</li>
+	<li>25 W pro Steckplatz, hotplugfähig</li>
+	<li>für Grafikkarten ergänzt durch AGP, später abgelöst durch PCIe</li>
+</ul>
+</article>
+
+<article class="slide"><h3>AGP</h3>
+<ul>
+	<li>Accelerated Graphics Port</li>
+	<li>direkte parallele Verbindung der Grafikkarte zum Chipsatz, statt über den PCI-Bus zu gehen</li>
+	<li>ca. 1998, Ergänzung zu PCI</li>
+	<li>höhere Datenrate (266 bzw. 533 MB/s) und Möglichkeit, System-RAM mitzunutzen (damit Grafikkarte günstiger wird)</li>
+	<li>mehrere Ausbaustufen, ab 2002 dann AGP 8x (2.133 MB/s)</li>
+	<li>25 W am Steckplatz, viele Grafikkarten benutzen zusätzliche Stromversorgung, z.B. über Laufwerks-Molexstecker</li>
+</ul>
+</article>
+
+<article class="slide"><h3>PCI Express (PCIe)</h3>
+<ul>
+	<li>serieller Bus für Erweiterungssteckkarten</li>
+	<li>löst ab ca. 2004 PCI und AGP ab</li>
+	<li>je nach Version 250, 500 oder 985 MB pro Sekunde und Lane („Spur“)</li>
+	<li>Geräte können mit einer oder mehreren (bis zu 16) Lanes angebunden sein, Slots unterschiedlich lang</li>
+	<li>16 Lanes PCIe 3.0: 16 × 985 MB/s = 31,5 GB/s</li>
+	<li>25 W pro Steckplatz, an PEG-Slots (PCI Express for Graphics, ×16) 75 W</li>
+	<li>zusätzliche Stromstecker definiert, die weitere 75 oder 150 W liefern</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Warum seriell statt parallel?</h3>
+<ul>
+	<li>man sollte meinen, parallele Übertragung sei prinzipbedingt achtmal schneller als serielle</li>
+	<li>warum sind neuere Stellen dann quasi alle seriell?</li>
+	<li>parallele Übertragung ist natürlich in der Tat eigentlich schneller</li>
+	<li>ab einer gewissen Taktrate wird es jedoch unmöglich, alle Bits gleichzeitig/synchron beim Empfänger ankommen zu lassen</li>
+	<li>allein die verschieden langen Leitungswege zwischen z.B. linker und rechter Seite des Steckers machen enorme Probleme</li>
+	<li>dazu kommt, dass die Leitungen sich gegenseitig stören („Crosstalk“)</li>
+	<li>Taktrate inzwischen so hoch, dass seriell weit schneller ist</li>
 </ul>
 </article>
 
