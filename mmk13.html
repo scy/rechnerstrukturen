@@ -744,6 +744,109 @@ Da ich nur montags Zeit habe, müssen die 36x 45 Minuten in sieben relativ lang
 </ul>
 </article>
 
+<h2>Ethernet</h2>
+
+<article class="slide"><h3>Ethernet (IEEE 802.3)</h3>
+<ul>
+	<li>Standard zur LAN-Kommunikation zwischen Computern</li>
+	<li>LAN: Local Area Network (lokales, also örtlich begrenztes, Netzwerk; z.B. in einer Wohnung oder einem Gebäude)</li>
+	<li>definiert elektrische/physikalische Spezifikationen (Leitungsarten, Spannungen, Übertragung von Bits), Struktur der Datenpakete in einem Ethernet-Netz und Aufbau eines solchen</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Ethernet: Geschichte</h3>
+<ul>
+	<li>erste Version 1980</li>
+	<li>ursprünglich über Koaxialkabel (10BASE2, genannt ›cheapernet‹ oder ›thin ethernet‹, und 10BASE5, ›thick ethernet‹) auf gemeinsamen Leitungen, 10 Mbit/s</li>
+	<li>gemeinsame Leitung, also Bus</li>
+	<li>aber kein Gerät, das den Bus steuert</li>
+	<li>Teilnehmer müssen also zusammenarbeiten, da immer nur einer gleichzeitig senden kann</li>
+	<li>Master bestimmen, der dann Sendeerlaubnis erteilt?</li>
+	<li>zu aufwendig und Zeit verschwendend</li>
+</ul>
+</article>
+
+<article class="slide"><h3>CSMA/CD</h3>
+<ul>
+	<li>Carrier Sense Multiple Access with Collision Detection</li>
+	<li>vor dem Senden wird darauf gewartet, dass die Leitung frei ist</li>
+	<li>carrier sense: während ein Teilnehmer sendet, „hört“ er gleichzeitig auf die Leitung, ob noch jemand anders sendet</li>
+	<li>wenn ja, Senden sofort abbrechen</li>
+	<li>anderer Sender tut das selbe</li>
+	<li>nach zufälliger Wartezeit Übertragung erneut versuchen</li>
+	<li>ähnelt stark dem Verhalten einer Gruppe Menschen auf einer Party</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Stern- statt Bustopologie</h3>
+<ul>
+	<li>Busleitungen sind aufwendig und fehleranfällig</li>
+	<li>z.B. muss bei Kabelbruch erst aufwendig die Fehlerstelle gesucht werden</li>
+	<li>deshalb: Baum-/Sterntopologie über Twisted-Pair-Kabel mit 8P8C-(„RJ45“)-Steckern (10BASE-T)</li>
+	<li>Zwischen-/Verteilerstationen: sogenannte Hubs</li>
+	<li>von den Hubs gehen Kabel entweder zu Rechnern oder zu anderen Hubs</li>
+	<li>Fehlersuche war jetzt einfacher</li>
+	<li>jetzt Vollduplex-Übertragung möglich</li>
+	<li>Performance weiterhin suboptimal, da alle Pakete an alle Empfänger gingen</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Switching Hubs</h3>
+<ul>
+	<li>deshalb (ca. 1990) Hubs um Funktion erweitert, Pakete nur „in Richtung“ Empfänger weiterzuleiten, nicht an alle</li>
+	<li>genannt ›Switching Hubs‹ (›umschaltende Hubs‹), kurz ›Switches‹</li>
+	<li>merken sich, welche MAC-Adressen an jeden der Anschlüsse (Ports) des Switches verbunden sind</li>
+	<li>wenn ein Paket an eine dieser MACs gerichtet ist, wird es nur über den jeweiligen Port weitergeleitet statt über alle</li>
+</ul>
+</article>
+
+<article class="slide"><h3>aktueller Stand der Technik</h3>
+<ul>
+	<li>Fast Ethernet (100BASE-TX, 100 Mbit/s, 1995), Gigabit Ethernet (1000BASE-T, 1999)</li>
+	<li>aktuell im professionellen Bereich bis zu 100 Gbit/s, u.a. über Glasfaser</li>
+	<li>außerdem verfügbar: Power over Ethernet (PoE), bis zu 25 W Stromversorgung</li>
+	<li>nützlich für den Anschluss kleiner Geräte (Sensoren, Überwachungskameras etc.) an das Netzwerk, ohne ein zusätzliches Netzteil bzw. eine Steckdose zu benötigen</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Ethernet-Frames</h3>
+<ul>
+	<li>Frame: ein Ethernet-Paket, wie es über die Leitung geht</li>
+	<li>enthält unter anderem:</li>
+	<li>sieben Oktette Präambel (10101010)</li>
+	<li>ein Oktett Start of Frame (10101011)</li>
+	<li>6 Oktette Ziel-MAC</li>
+	<li>6 Oktette Quell-MAC</li>
+	<li>42–1500 Oktette Nutzlast</li>
+	<li>4 Oktette Prüfsumme (CRC)</li>
+	<li>danach 12 Oktette Pause (interframe gap)</li>
+</ul>
+</article>
+
+<article class="slide"><h3>MAC-Adresse</h3>
+<ul>
+	<li>Media Access Control address, hat nichts mit Apple zu tun</li>
+	<li>„einmalige“ 48-Bit-Adresse einer Netzwerkkarte bzw. eines Netzwerkanschlusses, z.B. 10:9a:dd:a6:d4:6e</li>
+	<li>bei handelsüblichen Netzwerkkarten tatsächlich weltweit einmalig (Nummernbereiche pro Hersteller)</li>
+	<li>„locally administered addresses“ auch möglich (reservierter Bereich für selbst definierte Adressen)</li>
+	<li>MAC-Adresse bestimmt, an welche Netzwerkkarte im Segment das Paket gehen soll</li>
+	<li>hat nichts mit dem globalen Routing von Paketen (z.B. im Internet) zu tun</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Das OSI-Referenzmodell</h3>
+<ul>
+	<li>sieben Schichten des Netzwerkverkehrs, die aufeinander aufbauen und Komplexität wegabstrahieren</li>
+	<li>7: Application (HTTP, SMTP, DNS, DHCP etc.)</li>
+	<li>6: Presentation (SSL, TLS)</li>
+	<li>5: Session (Sockets, SOCKS)</li>
+	<li>4: Transport (TCP, UDP)</li>
+	<li>3: Network (IP, ICMP, IPsec)</li>
+	<li>2: Data Link (Ethernet-Frames)</li>
+	<li>1: Physical (100BASE-TX, 802.11 a/b/g/n, RS-232)</li>
+</ul>
+</article>
+
 </body>
 
 </html>
