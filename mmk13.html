@@ -847,6 +847,122 @@ Da ich nur montags Zeit habe, müssen die 36x 45 Minuten in sieben relativ lang
 </ul>
 </article>
 
+<h2>Wireless LAN (Wi-Fi)</h2>
+
+<article class="slide"><h3>Wireless LAN (Wi-Fi, IEEE 802.11)</h3>
+<ul>
+	<li><a href="http://en.wikipedia.org/w/index.php?title=IEEE_802.11&amp;oldid=579301013">IEEE 802.11</a>: Netzwerkkommunikation via Funk</li>
+	<li>Standard wird kontinuierlich weiterentwickelt, es existieren mehrere Versionen parallel auf dem Markt</li>
+	<li>1999: 802.11a (5-GHz-Band, bis zu 54 Mbit/s), 802.11b (2,4-GHz-Band, bis zu 11 Mbit/s)</li>
+	<li>802.11b zwar langsamer und störanfälliger (Mikrowellenherde, schnurlose Telefone etc.), aber beliebter weil einfacher zu implementieren und damit günstiger</li>
+	<li>2003 dann 802.11g (2,4-GHz-Band, bis zu 54 Mbit/s)</li>
+	<li>2009: 802.11n (kann sowohl im 2,4- als auch im 5-GHz-Band betrieben werden, pro Antenne bis zu 150 Mbit/s, meist 2 Antennen)</li>
+	<li>ab ca. 2014: 802.11ac (5-GHz-Band, ca. 1–6 Gbit/s, u.a. durch bis zu 8 Antennen)</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Wi-Fi-Infrastrukturen</h3>
+<ul>
+	<li>Access Point („managed mode“): Sterntopologie, direkte Kommunikation unter Clients aber möglich</li>
+	<li>Ad-hoc/Peer-to-Peer: Netztopologie ohne zentrale Stelle, meist nur zwei Computer</li>
+	<li>Mesh-Netze: „wildes“ Netz aus Access-Points und/oder Clients (<a href="http://de.wikipedia.org/w/index.php?title=Freies_Funknetz&amp;oldid=121066329">Freifunk</a>)</li>
+	<li>Access Points in Zügen, Flugzeugen, an öffentlichen Orten (Hot Spots)</li>
+	<li>Mobiltelefon als Access Point (Wi-Fi <a href="http://de.wikipedia.org/w/index.php?title=Tethering&amp;oldid=122658763">Tethering</a>, Mobile Hotspot)</li>
+	<li>bei allen Varianten können Unsichtbarkeitsprobleme auftreten (<a href="http://en.wikipedia.org/w/index.php?title=Hidden_node_problem&amp;oldid=573924581">hidden node problem</a>)</li>
+	<li>beim Nutzen freier WLANs: Admin kann mithören, bei unverschlüsselten (oder schwach verschlüsselten) sogar jeder! HTTPS oder besser VPN verwenden</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Wi-Fi-Sicherheit</h3>
+<ul>
+	<li>ursprünglicher Verschlüsselungsstandard WEP (Wired Equivalent Privacy) schon 2001 theoretisch gebrochen, heutzutage in ca. 10 Sekunden</li>
+	<li>neuer, provisorischer Standard WPA (Wi-Fi Protected Access) 2003 erschienen</li>
+	<li>2004 dann der „fertige“ WPA2</li>
+	<li>2009 WPA gebrochen, WPA2 noch „sicher“</li>
+	<li>auch WPA2 ist über <a href="http://de.wikipedia.org/w/index.php?title=Brute-Force-Methode&amp;oldid=121868461#Kryptologie">Brute-Force-Attacken</a> angreifbar</li>
+	<li>hilfreich: gutes Passwort wählen, SSID (Netzwerkname) ändern (denn es existieren <a href="http://de.wikipedia.org/w/index.php?title=Rainbow_Table&amp;oldid=117911461">Rainbow Tables</a> für gängige SSIDs)</li>
+</ul>
+</article>
+
+<h2>Bluetooth</h2>
+
+<article class="slide"><h3>Bluetooth (IEEE 802.15.1)</h3>
+<ul>
+	<li>Personal Area Network (PAN) auf 2,4-GHz-Funkbasis</li>
+	<li>2001 als Ersatz für Kabelverbindungen (z.B. RS-232) und Infrarotverbindungen (IrDA) entwickelt</li>
+	<li>benannt nach dänischem Wikingerkönig Harald Blauzahn</li>
+	<li>Klasse 1: 100 mW Sendeleistung, 100 m Reichweite; Klasse 2: 2,5 mW, 10 m; Klasse 3: 1 mW, 1 m</li>
+	<li>ursprünglich 732 kbit/s, seit Bluetooth 2.0 + EDR (Enhanced Data Rate) 3 Mbit/s, aktuell Bluetooth 4.0 mit Bluetooth Low Energy</li>
+	<li>ein Gerät agiert als Master, max. 7 Slaves pro Piconet</li>
+	<li>zwei Kommunikationskanäle: synchrone Verbindung (SCO) für Sprache (Echtzeit, hat Priorität) sowie asynchron-paketorientiert (ACL), benutzt „restliche“ Bandbreite</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Bluetooth-Profile</h3>
+<ul>
+	<li>Geräte kommunizieren über standardisierte Profile, ähnlich wie die Geräteklassen bei USB</li>
+	<li>Beispiele:<ul>
+		<li>HID (Human Interface Device: Tastaturen, Mäuse, Wiimotes etc.)</li>
+		<li>A2DP (Advanced Audio Distribution Profile: Stereo-Audio, z.B. für Kopfhörer)</li>
+		<li>HFP (Hands-Free Profile: Freisprecheinrichtungen/Headsets)</li>
+		<li>SPP (Serial Port Profile: „RS-232 über Bluetooth“)</li>
+	</ul></li>
+</ul>
+</article>
+
+<article class="slide"><h3>Bluetooth-Pairing</h3>
+<ul>
+	<li>Pairing: zwei Geräte werden miteinander „bekannt gemacht“ (handeln gemeinsamen Schlüssel für verschlüsselte Kommunikation aus)</li>
+	<li>verschiedene Pairing-Methoden:<ul>
+		<li>Just Works (ohne PIN-Eingabe und -Vergleich, dafür kein Man-in-the-Middle-Schutz)</li>
+		<li>PIN-Vergleich (automatisch generiert und auf beiden Geräten angezeigt)</li>
+		<li>PIN-Eingabe (nur bei Geräten mit einer Eingabemöglichkeit)</li>
+		<li>Out-of-Band (über anderen Kommunikationsweg, z.B. NFC)</li>
+		<li>Legacy (nach altem Standard: PIN-Eingabe oder feste PIN (0000, 1234 etc.))</li>
+	</ul></li>
+</ul>
+</article>
+
+<h2>Cloud Computing</h2>
+
+<article class="slide"><h3>Cloud Computing</h3>
+<ul>
+	<li>Name basiert auf der üblichen grafischen Darstellung des Internet als „Wolke“</li>
+	<li>Bereitstellung von Infrastruktur, Diensten und Software auf Rechnerfarmen im Internet, die man als Kunde flexibel anmietet</li>
+	<li>früher: Server (leistungsfähigere Computer, die Dinge bereitstellten)</li>
+	<li>dann: Virtualisierung (Serverdienste laufen unabhängig von tatsächlichen physischen Servergeräten, lassen sich nahtlos zwischen physischen Geräten umziehen etc.)</li>
+	<li>heute: Clouds (Zusammenschluss einer frei skalierbaren Menge physischer Systeme, die vom Kunden beliebig erweitert, reduziert oder aufgeteilt werden können)</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Cloud Computing: Eigenschaften</h3>
+<ul>
+	<li>Kostenreduzierung durch Zentralisierung</li>
+	<li>niedrige Einstiegskosten für potenziell große Leistungsfähigkeit</li>
+	<li>Ressourcen (Rechenleistung, Speicherkapazität) sind „unendlich“ und on-demand sofort verfügbar</li>
+	<li>Outsourcing der Wartung etc. an Spezialisten</li>
+	<li>enorme Ausfallsicherheit</li>
+	<li>Sicherheit sehr hoch (auch im Interesse des Anbieters), aber Vertrauen auf den Anbieter vonnöten</li>
+	<li>Datenschutz problematisch (Geschäftsdaten liegen auf Infrastruktur des Anbieters)</li>
+</ul>
+</article>
+
+<article class="slide"><h3>Cloud Computing: Arten</h3>
+<ul>
+	<li>Infrastructure as a Service (IaaS): Bereitstellung von<ul>
+		<li>Rechenleistung (virtuelle Maschinen), z.B. Amazon EC2 (Elastic Compute Cloud)</li>
+		<li>Speicherplatz (Blockspeicher, Webspeicher), z.B. Amazon EBS (Elastic Block Store), Amazon S3 (Simple Storage Server)</li>
+	</ul></li>
+	<li>Platform as a Service (PaaS): Bereitstellung einer Laufzeitumgebung für Applikationen (z.B. Websites), also vollständiger Webserver, Datenbankserver etc.<ul>
+		<li>z.B. Google App Engine, Heroku, Windows Azure, Engine Yard, Amazon Elastic Beanstalk</li>
+	</ul></li>
+	<li>Software as a Service (SaaS): Bereitstellung eines kompletten Softwareprodukts<ul>
+		<li>z.B. Google Docs, OnLive, Pingdom</li>
+	</ul></li>
+	<li>Bezahlung je nach Nutzungsdauer und -menge sowie übertragenem Datenvolumen</li>
+</ul>
+</article>
+
 </body>
 
 </html>
